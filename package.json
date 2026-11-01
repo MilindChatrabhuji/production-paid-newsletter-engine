@@ -1,0 +1,17 @@
+{
+  "name": "production-paid-newsletter-engine",
+  "version": "1.0.0",
+  "description": "Production Paid Subscription Niche Newsletter Engine",
+  "main": "engine/newsletter_curation_engine/index.ts",
+  "scripts": {
+    "test": "ts-node engine/newsletter_curation_engine/demo_runner.ts",
+    "deploy:gateway": "cd engine/edge_subscription_gateway && wrangler deploy"
+  },
+  "author": "Dr. Milind Chatrabhuji",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241022.0",
+    "typescript": "^5.6.3",
+    "wrangler": "^3.84.0"
+  }
+}

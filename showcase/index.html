@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Production Paid Subscription Niche Newsletter Engine - Simulator</title>
+  <style>
+    :root {
+      --bg: #080D1A;
+      --card-bg: #0F172A;
+      --border: #334155;
+      --primary: #F59E0B;
+      --accent: #EC4899;
+      --violet: #8B5CF6;
+      --text: #F8FAFC;
+      --text-muted: #94A3B8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    body { background: var(--bg); color: var(--text); padding: 24px; }
+    .header { text-align: center; margin-bottom: 24px; }
+    .badge { display: inline-block; padding: 4px 12px; border-radius: 999px; background: rgba(245, 158, 11, 0.2); color: #FBBF24; font-size: 12px; font-weight: 700; border: 1px solid var(--primary); margin-bottom: 8px; }
+    h1 { font-size: 28px; font-weight: 800; margin-bottom: 6px; }
+    p.subtitle { color: var(--text-muted); font-size: 14px; }
+    
+    .nav-tabs { display: flex; justify-content: center; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+    .tab-btn { background: var(--card-bg); border: 1px solid var(--border); color: var(--text-muted); padding: 10px 18px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 13px; transition: all 0.2s; }
+    .tab-btn.active, .tab-btn:hover { background: var(--primary); color: #0F172A; border-color: var(--primary); font-weight: 700; }
+
+    .screen { display: none; background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px; max-width: 900px; margin: 0 auto; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+    .screen.active { display: block; }
+    
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px; }
+    .card { background: #1E293B; border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+    .card h3 { font-size: 15px; margin-bottom: 8px; color: #FBBF24; }
+    
+    input, select, textarea, button { width: 100%; padding: 10px; margin-top: 6px; margin-bottom: 12px; border-radius: 6px; border: 1px solid var(--border); background: #0F172A; color: #fff; font-size: 13px; }
+    button.action-btn { background: var(--primary); color: #0F172A; font-weight: 700; border: none; cursor: pointer; transition: 0.2s; }
+    button.action-btn:hover { background: #FCD34D; }
+    
+    pre { background: #0B1120; border: 1px solid #1E293B; border-radius: 6px; padding: 12px; font-family: ui-monospace, monospace; font-size: 12px; color: #34D399; overflow-x: auto; white-space: pre-wrap; }
+    .stat-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 13px; }
+    .stat-label { color: var(--text-muted); }
+    .stat-value { font-weight: 700; color: #F8FAFC; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="badge">WAY #76 • PRODUCT 78</div>
+    <h1>Production Paid Subscription Niche Newsletter Engine</h1>
+    <p class="subtitle">Research Dossiers • Deep-Dive Drafts • Paywall Splitter • Archive SEO • Retainers $500–$3,000/mo</p>
+  </div>
+
+  <div class="nav-tabs">
+    <button class="tab-btn active" onclick="showScreen('screen1', this)">1. Research Dossier Compiler</button>
+    <button class="tab-btn" onclick="showScreen('screen2', this)">2. Deep-Dive Draft Studio</button>
+    <button class="tab-btn" onclick="showScreen('screen3', this)">3. Paywall Excerpt Splitter</button>
+    <button class="tab-btn" onclick="showScreen('screen4', this)">4. Retainer &amp; Sponsorship Invoicing</button>
+  </div>
+
+  <!-- Screen 1: Research Dossier Compiler -->
+  <div id="screen1" class="screen active">
+    <h2>Peer-Reviewed Niche Research Dossier Compiler</h2>
+    <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 16px;">Compile academic datasets, clinical trials, and regulatory advisories into structured briefs.</p>
+    
+    <div class="grid">
+      <div class="card">
+        <h3>Research Brief Inputs</h3>
+        <label>Topic Title:</label>
+        <input type="text" id="resTopic" value="High-Throughput Clinical FHIR Pipelines at the Serverless Edge">
+        <label>Core Thesis:</label>
+        <textarea id="resThesis" rows="3">Sub-10ms edge validation significantly improves EHR data pipeline latency while maintaining strict HIPAA &amp; DPDP compliance.</textarea>
+        <button class="action-btn" onclick="compileResearchDossier()">Compile Structured Dossier</button>
+      </div>
+
+      <div class="card">
+        <h3>Compiled Research Dossier</h3>
+        <pre id="dossierOutput">Click 'Compile Structured Dossier' to generate synthesis.</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 2: Deep-Dive Draft Studio -->
+  <div id="screen2" class="screen">
+    <h2>Deep-Dive Draft Studio</h2>
+    <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 16px;">Generate comprehensive analytical essays with executive abstracts, empirical data breakdowns, and author voice.</p>
+    
+    <div class="grid">
+      <div class="card">
+        <h3>Draft Controls</h3>
+        <label>Edition Number:</label>
+        <input type="number" id="draftEdition" value="78">
+        <label>Author Byline:</label>
+        <input type="text" id="draftAuthor" value="Dr. Milind Chatrabhuji, MD">
+        <label>Reading Time Target:</label>
+        <select id="draftReadTime">
+          <option value="5">5 Minutes (Concise Executive)</option>
+          <option value="7" selected>7 Minutes (Standard Deep Dive)</option>
+          <option value="12">12 Minutes (Technical Masterclass)</option>
+        </select>
+        <button class="action-btn" onclick="generateDraftPreview()">Generate Full Draft</button>
+      </div>
+
+      <div class="card">
+        <h3>Synthesized Draft Outline</h3>
+        <pre id="draftOutput">Click 'Generate Full Draft' to synthesize edition.</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 3: Paywall Excerpt Splitter -->
+  <div id="screen3" class="screen">
+    <h2>Smart Paywall Excerpt Splitter &amp; Archive SEO</h2>
+    <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 16px;">Simulate 35% free excerpt gating, high-converting barrier cards, and Schema.org JSON-LD generation.</p>
+    
+    <div class="grid">
+      <div class="card">
+        <h3>Paywall &amp; SEO Controls</h3>
+        <label>Excerpt Free Preview Ratio:</label>
+        <select id="excerptRatio" onchange="previewPaywallSplit()">
+          <option value="25">25% (High Urgency Gate)</option>
+          <option value="35" selected>35% (Optimal Conversion Balance)</option>
+          <option value="50">50% (Generous Teaser)</option>
+        </select>
+        <div class="stat-row"><span class="stat-label">Free Section Count:</span><span class="stat-value">2 Sections</span></div>
+        <div class="stat-row"><span class="stat-label">Subscriber-Only Sections:</span><span class="stat-value">2 Gated Sections</span></div>
+        <div class="stat-row"><span class="stat-label">Schema.org NewsArticle:</span><span class="stat-value">Automated JSON-LD</span></div>
+        <button class="action-btn" onclick="previewPaywallSplit()">Render Paywall Barrier</button>
+      </div>
+
+      <div class="card">
+        <h3>Split Preview Output</h3>
+        <pre id="paywallOutput"></pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 4: Invoicing Terminal -->
+  <div id="screen4" class="screen">
+    <h2>Retainer &amp; Sponsorship Invoicing Terminal</h2>
+    <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 16px;">Generate compliant corporate advisory and sponsorship invoices with 18% GST (Domestic UPI) or Zero-Rated LUT (USD PayPal).</p>
+    
+    <div class="grid">
+      <div class="card">
+        <h3>Invoice Configuration</h3>
+        <label>Select Item:</label>
+        <select id="invItem" onchange="calculateNewsletterInvoice()">
+          <option value="500">Tier 1: Starter Niche Research Digest ($500/mo)</option>
+          <option value="1500" selected>Tier 2: Growth Publication Operations ($1,500/mo)</option>
+          <option value="3000">Tier 3: Executive Intelligence &amp; Advisory ($3,000/mo)</option>
+          <option value="1200">Sponsorship: Primary Edition Banner ($1,200/issue)</option>
+        </select>
+        <label>Client Origin &amp; Currency:</label>
+        <select id="invCurrency" onchange="calculateNewsletterInvoice()">
+          <option value="USD_INTL" selected>USD - International (0% GST via LUT Export)</option>
+          <option value="INR_DOMESTIC">INR - Domestic India (18% GST Applicable)</option>
+        </select>
+        <button class="action-btn" onclick="calculateNewsletterInvoice()">Generate Invoice Summary</button>
+      </div>
+
+      <div class="card">
+        <h3>Invoice Summary</h3>
+        <pre id="invoiceOutput"></pre>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showScreen(screenId, btn) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(screenId).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    function compileResearchDossier() {
+      const topic = document.getElementById('resTopic').value;
+      const thesis = document.getElementById('resThesis').value;
+
+      const dossier = {
+        dossierId: "dos-" + Date.now().toString(36),
+        topicTitle: topic,
+        primaryThesis: thesis,
+        sourcesIndexed: 2,
+        verifiedSources: [
+          { source: "JMIR Clinical Informatics", evidence: "Peer-reviewed Paper", findings: "72% latency improvement at edge" },
+          { source: "Statutory Health Informatics Board", evidence: "Regulatory Advisory", findings: "Sub-10ms JWT prevents replay attacks" }
+        ],
+        status: "COMPILATION_COMPLETE"
+      };
+
+      document.getElementById('dossierOutput').innerText = JSON.stringify(dossier, null, 2);
+    }
+
+    function generateDraftPreview() {
+      const ed = document.getElementById('draftEdition').value;
+      const author = document.getElementById('draftAuthor').value;
+      const readTime = document.getElementById('draftReadTime').value;
+
+      document.getElementById('draftOutput').innerText = 
+`# Edition #${ed}: High-Throughput Clinical FHIR Pipelines at the Edge
+By: ${author} | Estimated Reading Time: ${readTime} minutes
+
+## Section 1: Executive Summary & The Big Idea [FREE]
+Empirical analysis of 54 distributed clinical nodes proves serverless edge routing eliminates traditional database bottlenecks.
+
+## Section 2: Clinical & Technical Benchmarks [FREE]
+* Benchmark A: 72% latency reduction (p < 0.001)
+* Benchmark B: Zero packet drops under 15k req/sec load
+
+---------------- [PAYWALL CUTOFF] ----------------
+
+## Section 3: The Deep Architecture: Sub-10ms Edge Pipelines [SUBSCRIBER ONLY]
+Full TypeScript implementation of edge token claims and Cloudflare D1 persistence.
+
+## Section 4: Tactical Playbook & Implementation Steps [SUBSCRIBER ONLY]
+Step-by-step corporate deployment checklist.`;
+    }
+
+    function previewPaywallSplit() {
+      const ratio = document.getElementById('excerptRatio').value;
+      document.getElementById('paywallOutput').innerText = 
+`[PAYWALL SPLIT ANALYSIS]
+Free Preview Ratio : ${ratio}%
+Free Word Count    : 620 words
+Subscriber Words   : 1,180 words
+Barrier Component  : <div class="subscriber-paywall-barrier">
+CTA Offerings      : Pro Subscriber ($9/mo) | Founding ($19/bundle)
+
+Schema.org JSON-LD :
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "isAccessibleForFree": false,
+  "hasPart": {
+    "@type": "WebPageElement",
+    "isAccessibleForFree": false,
+    "cssSelector": ".subscriber-paywall-barrier"
+  }
+}`;
+    }
+
+    function calculateNewsletterInvoice() {
+      const rate = parseFloat(document.getElementById('invItem').value);
+      const curr = document.getElementById('invCurrency').value;
+      let text = '';
+
+      if (curr === 'USD_INTL') {
+        text = 
+`INVOICE #: INV-NL-USD-${Date.now().toString(36).toUpperCase()}
+Item / Tier: $${rate.toFixed(2)} USD
+Subtotal: $${rate.toFixed(2)} USD
+IGST (Export of Service with LUT): $0.00 USD (0.00%)
+TOTAL DUE: $${rate.toFixed(2)} USD
+
+Remittance Coordinate:
+PayPal: milind.chatrabhuji@gmail.com
+Status: PENDING
+Statutory Reference: Zero-rated supply under Section 16 of IGST Act.`;
+      } else {
+        const inrRate = rate * 83.0;
+        const gst = inrRate * 0.18;
+        const total = inrRate + gst;
+        text = 
+`INVOICE #: INV-NL-INR-${Date.now().toString(36).toUpperCase()}
+Base Amount: ₹${inrRate.toLocaleString('en-IN', {minimumFractionDigits: 2})} INR
+GST @ 18%: ₹${gst.toLocaleString('en-IN', {minimumFractionDigits: 2})} INR
+TOTAL DUE: ₹${total.toLocaleString('en-IN', {minimumFractionDigits: 2})} INR
+
+Remittance Coordinate:
+Domestic UPI: milind.chatrabhuji@okhdfcbank
+Status: PENDING
+Includes statutory GST tax invoice breakdown.`;
+      }
+
+      document.getElementById('invoiceOutput').innerText = text;
+    }
+
+    // Init defaults
+    compileResearchDossier();
+    previewPaywallSplit();
+    calculateNewsletterInvoice();
+  </script>
+</body>
+</html>
